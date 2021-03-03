@@ -225,7 +225,7 @@ export class SendExchangeRateWorkerService {
         );
         [Promise.resolve()].concat(items).reduce((prev, curr) => {
           return new Promise((resolve1, reject1) => {
-            console.log(curr);
+            this.logger.debug(`processing ${JSON.stringify(curr)}`);
 
             prev.then(() => {
               axios
@@ -233,9 +233,12 @@ export class SendExchangeRateWorkerService {
                 .then((res: any) => {
                   console.log(`statusCode: ${res.statusCode}`);
                   // console.log(res);
+                  this.logger.debug(`done ${JSON.stringify(curr)}`);
+
                   resolve1();
                 })
                 .catch(error => {
+                  this.logger.debug(`error in response from ${curr['callback_url']}`);
                   // console.error(error);
                   resolve1();
                 })

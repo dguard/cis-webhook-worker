@@ -17,7 +17,7 @@ export default class LoggerConfig {
             .format('YYYY-MM-DD HH:mm:ss')
             .trim();
 
-          return `${chalk.magenta('[cis-worker]')} ${chalk.magenta(timestamp)} [${
+          return `${chalk.magenta('[cis-webhook-worker]')} ${chalk.magenta(timestamp)} [${
             msg.level
           }] - ${msg.message}`;
         }),
