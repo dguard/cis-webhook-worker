@@ -13,11 +13,11 @@ export class SendExchangeRateService {
   ) {}
 
   @Command({
-    command: 'keep-updated-exchange-rate',
+    command: 'send-exchange-rate',
     description:
       'Updates exchange rate',
   })
-  async keepUpdatedExchangeRate(): Promise<void> {
+  async sendExchangeRate(): Promise<void> {
       await this.sendExchangeRateWorkerService.startSendExchangeRate(SendExchangeRateWorkerService.PROCESS_QUEUE_NO_TIMEOUT)
   }
 }

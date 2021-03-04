@@ -6,5 +6,5 @@
   "ignore": [
     "src/**/*.spec.ts"
   ],
-  "exec": "ts-node -r tsconfig-paths/register src/console.ts keep-updated-exchange-rate"
+  "exec": "ts-node -r tsconfig-paths/register src/console.ts send-exchange-rate"
 }
